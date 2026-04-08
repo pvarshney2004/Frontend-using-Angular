@@ -1,0 +1,34 @@
+<div class="task-form" (click)="expandForm()">
+
+  <form [formGroup]="taskForm" (ngSubmit)="createTask()">
+
+    <!-- TITLE -->
+    <input 
+      type="text" 
+      formControlName="title" 
+      placeholder="Add a task..."
+      (focus)="expandForm()">
+
+    <!-- EXPANDABLE SECTION -->
+    <div *ngIf="isExpanded" class="expanded">
+
+      <textarea 
+        formControlName="description" 
+        placeholder="Add description">
+      </textarea>
+
+      <div class="actions">
+        <button type="button" class="cancel" (click)="closeForm($event)">
+          Close
+        </button>
+
+        <button type="submit" [disabled]="taskForm.invalid">
+          Add
+        </button>
+      </div>
+
+    </div>
+
+  </form>
+
+</div>

@@ -1,0 +1,80 @@
+.task-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 14px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+}
+
+/* HOVER EFFECT */
+.task-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+/* TITLE */
+.task-card h3 {
+    font-size: 16px;
+    margin: 0;
+    font-weight: 500;
+    color: #202124;
+}
+
+/* COMPLETED TASK */
+.task-card h3.completed {
+    text-decoration: line-through;
+    color: #9aa0a6;
+}
+
+/* DESCRIPTION */
+.task-card p {
+    font-size: 13px;
+    color: #5f6368;
+    margin: 0;
+}
+
+/* DATE */
+.task-card small {
+    font-size: 11px;
+    color: #9aa0a6;
+}
+
+/* ACTIONS */
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+/* BUTTONS */
+.actions button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: 0.2s ease;
+}
+
+/* COMPLETE BUTTON */
+.actions button:first-child {
+    color: #1a73e8;
+}
+
+.actions button:first-child:hover {
+    background: rgba(26, 115, 232, 0.1);
+}
+
+/* DELETE BUTTON */
+.actions button:last-child {
+    color: #d93025;
+}
+
+.actions button:last-child:hover {
+    background: rgba(217, 48, 37, 0.1);
+}

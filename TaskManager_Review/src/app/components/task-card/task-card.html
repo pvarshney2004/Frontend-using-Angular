@@ -1,0 +1,44 @@
+<div class="task-card" (click)="enableEdit()">
+
+  <!-- VIEW MODE -->
+  <ng-container *ngIf="!isEditing; else editMode">
+
+    <p *ngIf="isAdmin" class="user-id">
+      User ID: {{ task.userId }}
+    </p>
+    <h3 [class.completed]="task.isCompleted">
+      {{ task.title }}
+    </h3>
+
+    <p>{{ task.description }}</p>
+
+    <small>{{ task.createdAt | date:'short' }}</small>
+
+    <div class="actions">
+      <button (click)="toggleComplete(); $event.stopPropagation()">
+        {{ task.isCompleted ? 'Undo' : 'Complete' }}
+      </button>
+
+      <button (click)="deleteTask(); $event.stopPropagation()">
+        Delete
+      </button>
+    </div>
+
+  </ng-container>
+
+  <!-- EDIT MODE -->
+  <ng-template #editMode>
+
+    <input [(ngModel)]="editTask.title" placeholder="Title" (click)="$event.stopPropagation()" />
+
+    <textarea [(ngModel)]="editTask.description" placeholder="Description"
+      (click)="$event.stopPropagation()"></textarea>
+
+    <div class="actions">
+      <button (click)="saveEdit(); $event.stopPropagation()">Save</button>
+      <button (click)="cancelEdit(); $event.stopPropagation()">Cancel</button>
+    </div>
+
+  </ng-template>
+
+</div>

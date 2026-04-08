@@ -1,0 +1,46 @@
+<div class="login-wrapper">
+  <div class="login-card">
+    <h1 class="logo">TaskManager</h1>
+    <p class="subtitle">Sign in to your account</p>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+
+      <div class="input-group">
+        <input 
+          type="text" 
+          formControlName="username" 
+          placeholder=" "
+          [class.has-value]="loginForm.get('username')?.value">
+        <label>Username</label>
+
+        <small class="error"
+          *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.invalid">
+          Username is required
+        </small>
+      </div>
+
+      <div class="input-group">
+        <input 
+          type="password" 
+          formControlName="password" 
+          placeholder=" "
+          [class.has-value]="loginForm.get('password')?.value">
+        <label>Password</label>
+
+        <small class="error"
+          *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+          Password must be at least 3 characters
+        </small>
+      </div>
+
+      <button type="submit">
+        Sign in
+      </button>
+
+    </form>
+
+    <p class="login-link">
+      Don't have an account? <a routerLink="/register">Create account</a>
+    </p>
+  </div>
+</div>

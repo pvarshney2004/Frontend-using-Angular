@@ -1,0 +1,92 @@
+.task-form {
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 10px 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    transition: 0.25s ease;
+    cursor: text;
+}
+
+/* HOVER */
+.task-form:hover {
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+/* FORM LAYOUT */
+.task-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* INPUT */
+.task-form input {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 10px 6px;
+    font-weight: 500;
+}
+
+/* TEXTAREA */
+.task-form textarea {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding: 6px;
+    resize: none;
+    min-height: 60px;
+    margin-top: 6px;
+}
+
+/* EXPANDED SECTION */
+.expanded {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ACTION BUTTONS */
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+/* BUTTON BASE */
+.actions button {
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+/* ADD BUTTON */
+.actions button[type="submit"] {
+    background: #1a73e8;
+    color: white;
+}
+
+.actions button[type="submit"]:hover {
+    background: #1669c1;
+}
+
+/* CANCEL BUTTON */
+.actions .cancel {
+    background: transparent;
+    color: #5f6368;
+}
+
+.actions .cancel:hover {
+    background: #f1f3f4;
+}
+
+/* DISABLED */
+.actions button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

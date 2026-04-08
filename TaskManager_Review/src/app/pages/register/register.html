@@ -1,0 +1,61 @@
+<div class="register-wrapper">
+  <div class="register-card">
+    
+    <div class="left-panel">
+      <h1 class="logo">TaskManager</h1>
+      <h2 class="title">Create your Account</h2>
+
+      <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+
+        <div class="input-group">
+          <input type="text" formControlName="username" placeholder="Username">
+          <small class="error"
+            *ngIf="registerForm.get('username')?.touched && registerForm.get('username')?.invalid">
+            Username is required
+          </small>
+        </div>
+
+        <div class="password-section">
+          <input type="password" formControlName="password" placeholder="Password">
+
+          <small class="error"
+            *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid">
+            Password must be at least 8 characters
+          </small>
+
+          <p class="helper-text">
+            Use 8 or more characters with a mix of letters, numbers & symbols
+          </p>
+        </div>
+
+        <div class="input-group">
+          <select formControlName="role">
+            <option value="" disabled selected>Select Role</option>
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+          </select>
+
+          <small class="error"
+            *ngIf="registerForm.get('role')?.touched && registerForm.get('role')?.invalid">
+            Role is required
+          </small>
+        </div>
+
+        <div class="form-footer">
+          <a routerLink="/" class="signin-link">Sign in instead</a>
+          <button type="submit" class="next-btn">
+            Register
+          </button>
+        </div>
+
+      </form>
+    </div>
+    <div class="right-panel">
+      <img src="icon.jpeg" alt="Account Illustration">
+      <p class="illustration-text">
+        Manage your tasks efficiently with TaskManager.
+      </p>
+    </div>
+
+  </div>
+</div>

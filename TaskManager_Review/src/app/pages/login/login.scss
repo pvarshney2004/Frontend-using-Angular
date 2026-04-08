@@ -1,0 +1,146 @@
+.login-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f1f3f4;
+}
+
+.login-card {
+    width: 360px;
+    background: white;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* LOGO */
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: 'Product Sans', Arial, sans-serif;
+    background: linear-gradient(90deg, #4285f4, #ea4335, #fbbc05, #34a853);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #5f6368;
+    margin-bottom: 25px;
+}
+
+/* FORM */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 22px;
+}
+
+/* INPUT */
+.input-group input {
+    width: 100%;
+    padding: 16px 12px;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+    background: transparent;
+}
+
+/* Hide placeholder */
+.input-group input::placeholder {
+    opacity: 0;
+}
+
+/* LABEL */
+.input-group label {
+    position: absolute;
+    left: 12px;
+    top: 16px;
+    background: white;
+    padding: 0 4px;
+    font-size: 14px;
+    color: #5f6368;
+    transition: 0.2s ease;
+    pointer-events: none;
+}
+
+/* INPUT FOCUS */
+.input-group input:focus {
+    border-color: #1a73e8;
+}
+
+/* FLOAT LABEL (ALL CASES COVERED) */
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label,
+.input-group input.ng-dirty + label,
+.input-group input.ng-valid + label,
+.input-group input.has-value + label,
+.input-group input:-webkit-autofill + label {
+    top: -8px;
+    font-size: 12px;
+    color: #1a73e8;
+}
+
+/* AUTOFILL FIX */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+    -webkit-text-fill-color: #000 !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* ERROR INPUT */
+input.ng-invalid.ng-touched:not(:focus) {
+    border-color: #d93025;
+}
+
+/* ERROR TEXT */
+.error {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #d93025;
+    text-align: left;
+}
+
+/* BUTTON */
+button {
+    margin-top: 10px;
+    padding: 10px;
+    background: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    background: #1669c1;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* LINK */
+.login-link {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: 500;
+}

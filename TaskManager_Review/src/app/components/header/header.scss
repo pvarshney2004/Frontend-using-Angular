@@ -1,0 +1,204 @@
+/* ===== HEADER CONTAINER ===== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* ===== LEFT SECTION ===== */
+.header > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.2s ease;
+}
+
+.header img:hover {
+  opacity: 1;
+}
+
+/* ===== LOGO ===== */
+.logo {
+  font-size: 22px;
+  font-weight: 500;
+  color: #5f6368;
+}
+
+/* ===== SEARCH BAR ===== */
+.search {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.search input {
+  width: 60%;
+  max-width: 600px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background-color: #f1f3f4;
+  font-size: 16px;
+  transition: 0.2s ease;
+}
+
+.search input:focus {
+  background-color: #fff;
+  box-shadow: 0 1px 6px rgba(32,33,36,0.28);
+}
+
+/* ===== RIGHT SECTION ===== */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ===== USER SECTION ===== */
+.user-section {
+  position: relative;
+}
+
+/* USER ICON */
+.user-section img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  opacity: 1;
+}
+
+/* ===== PROFILE POPUP ===== */
+.profile-popup {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 260px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  text-align: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+/* EMAIL TEXT */
+.email {
+  font-size: 13px;
+  color: gray;
+  margin-bottom: 10px;
+}
+
+/* AVATAR */
+.avatar {
+  width: 60px;
+  height: 60px;
+  background: #455a64;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin: 10px auto;
+}
+
+/* GREETING */
+.profile-popup h3 {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #202124;
+}
+
+/* MANAGE BUTTON */
+.manage-btn {
+  border: 1px solid #dadce0;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: white;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.manage-btn:hover {
+  background: #f1f3f4;
+}
+
+/* ACTION BUTTONS */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.actions button {
+  flex: 1;
+  margin: 5px;
+  padding: 8px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* ADD ACCOUNT */
+.actions button:first-child {
+  background: #e8f0fe;
+}
+
+.actions button:first-child:hover {
+  background: #d2e3fc;
+}
+
+/* LOGOUT */
+.actions button:last-child {
+  background: #fce8e6;
+}
+
+.actions button:last-child:hover {
+  background: #f6c7c3;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== REFRESH ROTATION ===== */
+.rotate {
+  transform: rotate(360deg);
+  transition: transform 0.5s ease;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .search input {
+    width: 100%;
+  }
+
+  .logo {
+    display: none;
+  }
+}

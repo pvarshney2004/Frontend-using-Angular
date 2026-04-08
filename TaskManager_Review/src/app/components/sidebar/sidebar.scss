@@ -1,0 +1,81 @@
+/* SIDEBAR CONTAINER */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  width: 240px;           /* expanded width */
+  min-width: 70px;         /* collapsed width */
+  height: 100vh;           /* full height */
+  background: white;
+  border-right: 1px solid #dadce0;
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+/* COLLAPSED STATE */
+.sidebar.collapsed {
+  width: 70px;
+}
+
+/* EACH ITEM */
+.sidebar > div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 0 25px 25px 0;
+  transition: background 0.2s ease, justify-content 0.3s ease;
+}
+
+/* CENTER ICONS WHEN COLLAPSED */
+.sidebar.collapsed > div {
+  justify-content: center;
+  gap: 0;
+}
+
+/* ICON */
+.sidebar img {
+  width: 24px;
+  height: 24px;
+  opacity: 0.7;
+}
+
+/* TEXT */
+.sidebar h2 {
+  font-size: 15px;
+  font-weight: 500;
+  color: #202124;
+  margin: 0;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+/* HIDE TEXT WHEN COLLAPSED */
+.sidebar.collapsed h2 {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+/* HOVER */
+.sidebar > div:hover {
+  background-color: #f1f3f4;
+}
+
+/* ACTIVE ITEM */
+.sidebar .active {
+  background-color: #feefc3; /* Google Keep yellow */
+}
+
+/* ACTIVE HOVER */
+.sidebar .active:hover {
+  background-color: #fde293;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .sidebar {
+    display: none;
+  }
+}

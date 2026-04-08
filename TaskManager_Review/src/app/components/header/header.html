@@ -1,0 +1,44 @@
+<div class="header">
+  <div>
+    <img src="sidebar.jpeg" (click)="toggleSidebar()" alt="">
+    <img src="keep.png" alt="">
+    <span class="logo">TaskManager</span>
+  </div>
+
+  <!-- <div class="search">
+    <input type="text" placeholder="Search by title" (input)="onSearch($event)">
+  </div> -->
+
+  <div class="right-section">
+    <img src="refresh.png" alt="" (click)="onRefresh()" [class.rotate]="isRefreshing">
+    <img src="gridview.jpeg" alt="">
+    <img src="settings.png" alt="">
+    <img src="dots.png" alt="">
+
+    <div class="user-section">
+      <img src="user.png" alt="user" (click)="toggleProfile()">
+
+      <div class="profile-popup" *ngIf="showProfile">
+
+        <!-- Avatar using first letter of username -->
+        <div class="avatar">
+          {{ user.username?.charAt(0).toUpperCase() }}
+        </div>
+
+        <!-- Greeting -->
+        <h3>Hi, {{ user.username }}!</h3>
+
+        <!-- Role display -->
+        <p class="role">Role: {{ user.role }}</p>
+
+        <button class="manage-btn">Manage your Account</button>
+
+        <div class="actions">
+          <button (click)="addAccount()">Add account</button>
+          <button (click)="logout()">Sign out</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

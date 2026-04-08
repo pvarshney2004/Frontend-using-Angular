@@ -1,0 +1,91 @@
+/* MAIN DASHBOARD */
+.dashboard {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #f1f3f4;
+}
+
+/* HEADER already fixed height assumed */
+app-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* MAIN LAYOUT */
+.main-container {
+    display: flex;
+    height: calc(100vh - 64px); // adjust if header height differs
+}
+
+/* SIDEBAR */
+app-sidebar {
+    width: 240px;
+    transition: width 0.3s ease;
+}
+
+/* CONTENT AREA */
+.content {
+    flex: 1;
+    padding: 20px 30px;
+    overflow-y: auto;
+}
+
+/* TASK FORM SPACING */
+app-task-form {
+    display: block;
+    max-width: 600px;
+    margin: 0 auto 25px auto;
+}
+
+/* TASK LIST GRID */
+.task-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+/* EMPTY STATE */
+.empty {
+    text-align: center;
+    margin-top: 40px;
+    color: #5f6368;
+    font-size: 14px;
+}
+
+/* TASK CARD WRAPPER (optional enhancement) */
+app-task-card {
+    display: block;
+}
+
+/* SCROLLBAR (nice UI touch) */
+.content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.content::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+
+    .main-container {
+        flex-direction: column;
+    }
+
+    app-sidebar {
+        width: 100%;
+        height: auto;
+    }
+
+    .content {
+        padding: 15px;
+    }
+
+    .task-list {
+        grid-template-columns: 1fr;
+    }
+}

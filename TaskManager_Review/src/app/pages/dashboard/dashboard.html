@@ -1,0 +1,36 @@
+<div class="dashboard">
+
+    <app-header (menuToggle)="toggleSidebar()" (search)="onSearch($event)">
+    </app-header>
+
+    <div class="main-container">
+        <app-sidebar [collapsed]="isCollapsed"></app-sidebar>
+
+        <div class="content">
+
+            <p *ngIf="isAdmin" class="admin-label">
+                Admin View: Showing all user'ss tasks
+            </p>
+
+            <ng-container *ngIf="!isTrashRoute">
+
+                <app-task-form *ngIf="!isAdmin" (taskCreated)="loadTasks()">
+                </app-task-form>
+
+                <div class="task-list">
+                    <app-task-card *ngFor="let task of filteredTasks; trackBy: trackById" [task]="task"
+                        [isAdmin]="isAdmin" (refresh)="loadTasks()">
+                    </app-task-card>
+                </div>
+
+                <p *ngIf="allTasks.length === 0" class="empty">
+                    {{ isAdmin ? 'No tasks found in system' : 'No tasks available' }}
+                </p>
+
+            </ng-container>
+
+            <router-outlet></router-outlet>
+
+        </div>
+    </div>
+</div>
