@@ -1,0 +1,40 @@
+<div class="archive-container">
+  <h2 class="title">Reminder</h2>
+
+  <div class="notes-grid">
+    <app-note-card
+      *ngFor="let note of reminderNotes; trackBy: trackByNoteId"
+      [note]="note"
+      (refresh)="loadNotes()"
+      (edit)="openEditNote($event)"
+    >
+    </app-note-card>
+  </div>
+
+  <p *ngIf="reminderNotes.length === 0" class="empty">
+    No notes to be remind
+  </p>
+
+  <!-- EDIT MODAL -->
+  <div class="edit-modal" *ngIf="isEditOpen">
+    <div class="edit-card" [ngStyle]="{'background-color': selectedNote?.color || '#ffffff'}">
+
+      <input [(ngModel)]="selectedNote.title" placeholder="Title" class="edit-title" />
+
+      <textarea [(ngModel)]="selectedNote.description" placeholder="Take a note..." class="edit-desc">
+      </textarea>
+
+      <div class="edit-footer">
+        <span class="date">
+          {{ selectedNote.reminder | date }}
+        </span>
+
+        <div class="edit-actions">
+          <button class="save-btn" (click)="updateNote()">Save</button>
+          <button class="close-btn" (click)="closeEdit()">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

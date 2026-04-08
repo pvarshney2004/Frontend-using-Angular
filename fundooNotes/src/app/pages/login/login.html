@@ -1,0 +1,37 @@
+<div class="login-wrapper">
+  <div class="login-card">
+    <h1 class="logo">Fundoo</h1>
+    <p class="subtitle">Sign in with your Fundoo Account</p>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <div class="input-group">
+        <input type="email" formControlName="email" placeholder=" ">
+        <label>Email</label>
+
+        <small class="error"
+          *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+          Enter a valid email
+        </small>
+      </div>
+
+      <div class="input-group">
+        <input type="password" formControlName="password" placeholder=" ">
+        <label>Password</label>
+
+        <small class="error"
+          *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+          Password must be at least 3 characters
+        </small>
+      </div>
+
+      <button type="submit">
+        Sign in
+      </button>
+
+    </form>
+
+    <p class="login-link">
+      Don't have an account? <a routerLink="/register">Create account</a>
+    </p>
+  </div>
+</div>

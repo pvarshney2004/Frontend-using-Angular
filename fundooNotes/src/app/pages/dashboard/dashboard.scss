@@ -1,0 +1,26 @@
+/* DASHBOARD CONTAINER (optional if needed) */
+.dashboard {
+  padding: 10px;
+}
+
+/* GRID */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+/* NOTE FORM SPACING */
+app-note-form {
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* EMPTY STATE */
+.empty {
+  text-align: center;
+  margin-top: 40px;
+  color: #5f6368;
+  font-size: larger;
+}

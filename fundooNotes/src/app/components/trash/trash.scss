@@ -1,0 +1,76 @@
+.trash-container {
+    padding: 10px;
+}
+
+.title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #202124;
+}
+
+/* GRID SAME AS DASHBOARD */
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+/* CARD */
+.note-card {
+    background: white;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    transition: 0.2s ease;
+}
+
+.note-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.note-card h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.note-card p {
+    font-size: 14px;
+    color: #202124;
+}
+
+/* ACTIONS */
+.actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.actions button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.actions button:first-child {
+    color: #ffffff;
+    background-color: #177bf5;
+    padding: 6px;
+    border-radius: 5px;
+    /* restore */
+}
+
+.actions button:last-child {
+    color: #ffffff;
+    background-color: red;
+    padding: 6px;
+    border-radius: 5px;
+    /* delete */
+}
+
+.empty {
+    text-align: center;
+    margin-top: 40px;
+    color: #5f6368;
+    font-size: larger;
+}

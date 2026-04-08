@@ -1,0 +1,213 @@
+.register-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+.register-card {
+    display: flex;
+    width: 750px;
+    padding: 48px 40px 36px;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    gap: 40px;
+    box-sizing: border-box;
+}
+
+/* ================= LEFT PANEL ================= */
+.left-panel {
+    flex: 1.5;
+}
+
+/* LOGO */
+.logo {
+    font-family: 'Product Sans', Arial, sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #4285f4, #ea4335, #fbbc05, #34a853);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* TITLE */
+.title {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 24px;
+    color: #202124;
+}
+
+/* NAME ROW */
+.name-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.field {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* INPUT GROUP */
+.input-group {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* INPUT */
+input {
+    width: 100%;
+    padding: 13px 15px;
+    margin: 6px 0;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: 0.2s ease;
+}
+
+/* INPUT FOCUS */
+input:focus {
+    border: 2px solid #1a73e8;
+    outline: none;
+    padding: 12px 14px;
+    /* prevent jump */
+}
+
+/* ERROR BORDER */
+input.ng-invalid.ng-touched:not(:focus) {
+    border-color: #d93025;
+}
+
+/* ERROR TEXT */
+.error {
+    font-size: 12px;
+    color: #d93025;
+    margin-top: 2px;
+}
+
+/* PASSWORD SECTION */
+.password-section {
+    margin-top: 10px;
+}
+
+/* HELPER TEXT */
+.helper-text {
+    font-size: 12px;
+    color: #5f6368;
+    margin: 4px 0 16px 0;
+}
+
+/* FOOTER */
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* SIGNIN LINK */
+.signin-link {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* BUTTON */
+.next-btn {
+    background-color: #1a73e8;
+    color: white;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.next-btn:hover {
+    background: #1669c1;
+}
+
+/* ================= RIGHT PANEL ================= */
+.right-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    img {
+        width: 240px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .illustration-text {
+        font-size: 15px;
+        color: #202124;
+        line-height: 1.4;
+    }
+}
+
+
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 900px) {
+    .register-card {
+        width: 90%;
+        padding: 30px;
+        gap: 20px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .register-card {
+        flex-direction: column; /* stack layout */
+        width: 100%;
+        height: 100vh;
+        border: none;
+        border-radius: 0;
+        padding: 20px;
+        justify-content: center;
+    }
+
+    /* Hide right panel */
+    .right-panel {
+        display: none;
+    }
+
+    /* Full width form */
+    .left-panel {
+        width: 100%;
+    }
+
+    /* Name fields stack vertically */
+    .name-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    /* Button full width */
+    .next-btn {
+        width: 100%;
+    }
+
+    /* Footer stack */
+    .form-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

@@ -1,0 +1,74 @@
+.dashboard {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f1f3f4;
+}
+
+/* HEADER */
+app-header {
+  height: 64px;
+  border-bottom: 1px solid #dadce0;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* MAIN BODY */
+.main-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* SIDEBAR (managed in sidebar.scss) */
+app-sidebar {
+  transition: width 0.3s ease;
+}
+
+/* CONTENT AREA */
+.content {
+  flex: 1;
+  padding: 20px 30px;
+  overflow-y: auto;
+  transition: margin-left 0.3s ease;
+}
+
+/* NOTES GRID */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+  app-sidebar {
+    width: 200px;
+  }
+
+  .search input {
+    width: 250px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  app-sidebar {
+    display: none; /* hide sidebar */
+  }
+
+  .content {
+    padding: 10px;
+  }
+
+  .search input {
+    width: 150px;
+  }
+
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+}

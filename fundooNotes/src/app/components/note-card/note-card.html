@@ -1,0 +1,39 @@
+<div class="note-card" [ngStyle]="{'background-color': note?.color || '#ffffff'}">
+  <div class="card-content" (click)="openEdit()">
+
+    <div class="pin-icon" (click)="togglePin($event)">
+      <img [src]="note?.isPin ? 'pin.png' : 'unpin.png'" alt="pin">
+    </div>
+    
+    <p>{{note.IsPin}}</p>
+    <h3>{{note?.title | uppercase}}</h3>
+
+    <p [style.color]="!note?.description ? 'rgb(300, 84, 84)' : '#202124'">
+      {{ note?.description || 'Description not added' }}
+    </p>
+
+    <div class="reminder-chip" *ngIf="note?.reminder" (click)="$event.stopPropagation()">
+      <span class="reminder-text">
+        ⏰ {{ note.reminder | date:'MMM d, y, h:mm a' }}
+      </span>
+      <span class="remove-btn" (click)="removeReminder($event)">✕</span>
+    </div>
+
+  </div>
+
+  <div class="actions">
+    <img (click)="toggleColorPalette()" src="color.png" alt="">
+    <img (click)="openReminderPicker()" src="reminderpng.png" alt="">
+    <img (click)="toggleArchive()" src="archive.jpeg" alt="">
+    <img (click)="deleteNote()" src="trash3.png" alt="">
+  </div>
+
+  <!-- IMPORTANT FIX: removed 'hidden' -->
+  <input type="datetime-local" #reminderInput (change)="setReminder($event)"
+    style="opacity: 0; position: absolute; pointer-events: none;">
+
+  <div class="color-palette" *ngIf="showColors">
+    <span *ngFor="let c of colors" [style.background]="c" (click)="changeColor(c)">
+    </span>
+  </div>
+</div>

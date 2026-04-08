@@ -1,0 +1,51 @@
+<app-note-form (noteCreated)="loadNotes()"></app-note-form>
+
+<!-- PINNED -->
+<div *ngIf="pinnedNotes.length">
+  <h3>Pinned</h3>
+  <div class="notes-grid">
+    <app-note-card *ngFor="let note of pinnedNotes; trackBy: trackByNoteId"
+      [note]="note"
+      (refresh)="loadNotes()"
+      (edit)="openEditNote($event)">
+    </app-note-card>
+  </div>
+</div>
+
+<!-- OTHERS -->
+<div *ngIf="otherNotes.length">
+  <h3>Others</h3>
+  <div class="notes-grid">
+    <app-note-card *ngFor="let note of otherNotes; trackBy: trackByNoteId"
+      [note]="note"
+      (refresh)="loadNotes()"
+      (edit)="openEditNote($event)">
+    </app-note-card>
+  </div>
+</div>
+
+<div class="edit-modal" *ngIf="isEditOpen">
+  <div class="edit-card" [ngStyle]="{'background-color': selectedNote?.color || '#ffffff'}">
+
+    <input [(ngModel)]="selectedNote.title" placeholder="Title" class="edit-title" />
+
+    <textarea [(ngModel)]="selectedNote.description" placeholder="Take a note..." class="edit-desc">
+    </textarea>
+
+    <div class="edit-footer">
+      <span class="date">
+        {{ selectedNote.reminder | date }}
+      </span>
+
+      <div class="edit-actions">
+        <button class="save-btn" (click)="updateNote()">Save</button>
+        <button class="close-btn" (click)="closeEdit()">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<p *ngIf="allNotes.length === 0" class="empty">
+  Notes you add appear here
+</p>

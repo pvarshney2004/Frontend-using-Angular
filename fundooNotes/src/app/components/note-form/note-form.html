@@ -1,0 +1,11 @@
+<div class="note-form" [formGroup]="noteForm">
+    <input type="text" formControlName="title" placeholder="Title">
+    <textarea formControlName="description" placeholder="Take a note...">
+  </textarea>
+    <button (click)="createNote()">
+        Add
+    </button>
+    <small class="error" *ngIf="noteForm.get('title')?.touched && noteForm.get('title')?.invalid">
+        Title cannot be empty
+    </small>
+</div>

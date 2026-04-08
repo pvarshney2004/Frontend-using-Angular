@@ -1,0 +1,72 @@
+<div class="register-wrapper">
+  <div class="register-card">
+
+    <div class="left-panel">
+      <h1 class="logo">Fundoo</h1>
+      <h2 class="title">Create your Fundoo Account</h2>
+
+      <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+
+        <!-- NAME -->
+        <div class="name-row">
+          <div class="field">
+            <input type="text" formControlName="firstName" placeholder="First name">
+            <small class="error"
+              *ngIf="registerForm.get('firstName')?.touched && registerForm.get('firstName')?.invalid">
+              First name required
+            </small>
+          </div>
+
+          <div class="field">
+            <input type="text" formControlName="lastName" placeholder="Last name">
+            <small class="error"
+              *ngIf="registerForm.get('lastName')?.touched && registerForm.get('lastName')?.invalid">
+              Last name required
+            </small>
+          </div>
+        </div>
+
+        <!-- EMAIL -->
+        <div class="input-group">
+          <input type="email" formControlName="email" placeholder="Email">
+          <small class="error"
+            *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid">
+            Enter a valid email
+          </small>
+        </div>
+
+        <!-- PASSWORD -->
+        <div class="password-section">
+          <input type="password" formControlName="password" placeholder="Password">
+
+          <small class="error"
+            *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid">
+            Password must be at least 8 characters
+          </small>
+
+          <p class="helper-text">
+            Use 8 or more characters with a mix of letters, numbers & symbols
+          </p>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="form-footer">
+          <a routerLink="/" class="signin-link">Sign in instead</a>
+          <button type="submit" class="next-btn">
+            Next
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="right-panel">
+      <img src="icon.jpeg" alt="Account Security Illustration">
+      <p class="illustration-text">
+        One account. All of Fundoo working for you.
+      </p>
+    </div>
+
+  </div>
+</div>

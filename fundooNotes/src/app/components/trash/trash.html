@@ -1,0 +1,18 @@
+<div class="trash-container">
+  <h2 class="title">Trash</h2>
+  <div class="notes-grid">
+    @for (note of trashNotes; track note.noteId) {
+    <div class="note-card">
+      <h3>{{ note?.title | uppercase }}</h3>
+      <p>{{ note?.description }}</p>
+      <div class="actions">
+        <button (click)="restoreNote(note.noteId)">Restore</button>
+        <button (click)="deleteForever(note.noteId)">Delete Forever</button>
+      </div>
+    </div>
+    }
+  </div>
+  <p *ngIf="trashNotes.length === 0" class="empty">
+    No notes in trash
+  </p>
+</div>

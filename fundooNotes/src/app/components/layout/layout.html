@@ -1,0 +1,14 @@
+<div class="dashboard">
+  <!-- HEADER -->
+  <app-header (menuToggle)="toggleSidebar()" (refresh)="handleRefresh()" (search)="handleSearch($event)"></app-header>
+
+  <div class="main-container">
+    <!-- SIDEBAR -->
+    <app-sidebar [collapsed]="isCollapsed"></app-sidebar>
+
+    <!-- MAIN CONTENT  -->
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

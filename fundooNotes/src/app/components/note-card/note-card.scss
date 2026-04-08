@@ -1,0 +1,133 @@
+.note-card {
+  position: relative;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+/* HOVER EFFECT */
+.note-card:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* TITLE */
+.note-card h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+/* DESCRIPTION */
+.note-card p {
+  font-size: 14px;
+  color: #202124;
+  margin: 0;
+}
+
+/* PIN ICON (top right) */
+.pin-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  opacity: 0;
+  /* hidden initially */
+  transition: opacity 0.2s ease;
+}
+
+.pin-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+/* ACTION ICONS */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+
+  opacity: 0;
+  /* hidden initially */
+  transition: opacity 0.2s ease;
+}
+
+/* ICON SIZE */
+.actions img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.2s;
+}
+
+.actions img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* SHOW ON HOVER */
+.note-card:hover .actions,
+.note-card:hover .pin-icon {
+  opacity: 1;
+}
+
+.color-palette {
+  position: absolute;
+  bottom: 50px;
+  left: 10px;
+
+  display: flex;
+  gap: 8px;
+
+  background: white;
+  padding: 8px;
+  border-radius: 8px;
+
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+
+  z-index: 1000;
+}
+
+.color-palette span {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+
+.reminder-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f1f3f4;
+  color: #202124;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-top: 8px;
+  width: fit-content;
+  transition: all 0.2s ease;
+}
+
+.reminder-chip:hover {
+  background-color: #e0e0e0;
+}
+
+.reminder-text {
+  font-weight: 500;
+}
+
+.remove-btn {
+  cursor: pointer;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.remove-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}

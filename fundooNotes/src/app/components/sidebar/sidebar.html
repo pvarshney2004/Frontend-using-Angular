@@ -1,0 +1,36 @@
+<div class="sidebar" [class.collapsed]="collapsed"s>
+
+  <!-- NOTES -->
+  <div 
+    routerLink="/dashboard" 
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }">
+    <img src="bulb.jpg">
+    <h2>Notes</h2>
+  </div>
+
+  <!-- REMINDERS -->
+  <div 
+    routerLink="/reminders" 
+    routerLinkActive="active">
+    <img src="reminderpng.png">
+    <h2>Reminders</h2>
+  </div>
+
+  <!-- ARCHIVE -->
+  <div 
+    routerLink="/archive" 
+    routerLinkActive="active">
+    <img src="archive.jpeg">
+    <h2>Archive</h2>
+  </div>
+
+  <!-- TRASH -->
+  <div 
+    routerLink="/trash" 
+    routerLinkActive="active">
+    <img src="trash3.png">
+    <h2>Trash</h2>
+  </div>
+
+</div>

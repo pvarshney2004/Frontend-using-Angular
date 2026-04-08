@@ -1,0 +1,69 @@
+.archive-container {
+  padding: 10px;
+}
+
+.title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #202124;
+}
+
+/* GRID */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+/* CARD */
+.note-card {
+  background: white;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  transition: 0.2s ease;
+}
+
+.note-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.note-card h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.note-card p {
+  font-size: 14px;
+  color: #202124;
+}
+
+/* ACTIONS */
+.actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.actions button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.actions button:first-child {
+  color: #1a73e8; /* unarchive */
+}
+
+.actions button:last-child {
+  color: #d93025; /* trash */
+}
+
+/* EMPTY STATE */
+.empty {
+  text-align: center;
+  margin-top: 40px;
+  color: #5f6368;
+  font-size: larger;
+}
